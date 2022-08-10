@@ -10,5 +10,6 @@ console.log(ad, cd)
 console.log(person.persona)
 console.log(person.arbaz)
 require('./newfile')
+console.log(2+2)
 
 
