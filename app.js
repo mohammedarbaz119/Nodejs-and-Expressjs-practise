@@ -11,5 +11,6 @@ console.log(person.persona)
 console.log(person.arbaz)
 require('./newfile')
 console.log(2+2)
-
+console.log(2+30)
+console.log("arvsvs")
 
