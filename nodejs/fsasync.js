@@ -1,4 +1,4 @@
-const { readFile, writeFile, copyFile } = require('fs')
+const { readFile, writeFile, copyFile, writeFileSync } = require('fs')
 copyFile('./content/subfolder/new.txt', './content/subfolder/test.txt', (err) => {
     if (err) {
         console.log(err)
@@ -16,3 +16,6 @@ readFile('./content/subfolder/new.txt','utf-8',(err,res)=>{
         console.log(res)
     }
 })
+for (let i = 0;i< 10000; i++) {
+   writeFileSync('./newd.txt',`hello world ${i}\n`,{flag:'a'})
+}
