@@ -1,6 +1,17 @@
 const express = require('express')
 const app = express()
 const {products,people}= require('./json')
+const logger =(req,res,next)=>{
+    let {user} = req.query
+    if(user){
+res.send('cooool puchi')
+next()
+
+    }else{
+        res.send('unauth')
+    }
+    
+}
 app.get('/',(req,res)=>{
     res.send('<h1>home page</h1><a href="/products">products</a><hr/><a href ="/people">people</a>')
 })
@@ -15,7 +26,7 @@ app.get('/products/:id',(req,res)=>{
     }
     res.json(newarray)
 })
-app.get('/products/search/query',(req,res)=>{
+app.get('/products/search/query',logger,(req,res)=>{
     const {search,sort,limit} = req.query
     console.log(req.query)
     if(search){
@@ -42,8 +53,13 @@ app.get('/products/search/query',(req,res)=>{
     else{
         res.status(404).send('<h1>not found</h1>')
     }
+app.get('/users/new/:id',(req,res)=>{
+    const {id} = req.params
+    res.send(`<h1>${id} is good</h1?`)
+})
     
 })
+
 
 app.listen(4000,()=>{
     console.log('listening..')
