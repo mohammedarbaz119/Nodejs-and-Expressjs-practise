@@ -1,2 +1,2 @@
-# node-and--expressjs
-practise
+# node-and-expressjs
+practise for node and express js
