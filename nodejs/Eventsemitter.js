@@ -6,7 +6,7 @@ custonemit.on('response',(name,id)=>{
 custonemit.on('response',()=>{
     console.log("new response")
 })
-custonemit.emit('response','arbaz',23)
+custonemit.emit('response','arbaz',23)// arbaz and id is 23
 // const http = require('http')
 // const server =http.createServer()
 // server.on('request',(req,res)=>{
